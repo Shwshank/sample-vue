@@ -1,19 +1,5 @@
 const baseUrl = 'https://api.phrase.com/v2';
 
-export async function fetchTest(){
-  await fetch(baseUrl)
-    .then(response => response.json())
-    .then(json => console.log(json))
-}
-
-export const getData = async (filters='')=>{
-  let response = await fetch(baseUrl+filters,{
-    method: 'GET',
-    mode: 'cors',
-  });
-  return response.json();
-}
-
 export const loginUser = async (username, password)=>{
 
   let body = {"note":"Generated from app login","scopes":["read","write"],"expires_at":"2021-03-30T09:52:53Z"}
