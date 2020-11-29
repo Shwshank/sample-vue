@@ -17,6 +17,8 @@ export default {
   components: { ProjectList },
   setup() {
     const route = useRoute();
+
+    // Get PageID from query params
     const pageId = computed(() => route.params.pageId)
 
     const state = reactive({
@@ -27,8 +29,10 @@ export default {
       let flag = localStorage.getItem('token')
       if(!flag)
       router.push('/')
-
     }
+
+    // Check for token on onMounted
+    // If token not present, redirect to login page
 
     onMounted(() => {
       checkForToken()

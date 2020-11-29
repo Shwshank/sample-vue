@@ -22,6 +22,10 @@ export default {
       router.push('/dashboard/1')
     }
 
+    // Check for token on mount
+    // If token not available, display login page
+    // Else redirect to Dashboard
+
     onMounted(() => {
       checkForToken()
     })
